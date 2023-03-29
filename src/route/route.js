@@ -9,6 +9,7 @@ const { addBooks } = require('../controller/books/createBooks');
 const { updateBooks } = require('../controller/books/updateBooks');
 const {deletBook} = require("../controller/books/deleteBook");
 const {readBook} = require("../controller/books/readBook");
+const {attribuerLivreUtilisateur} = require('../controller/users/addBooks')
 
 router.post('/utilisateurs', ajouterUtilisateur);
 router.get('/utilisateurs/:id', readUser);
@@ -17,8 +18,13 @@ router.delete('/utilisateurs/:id', deletUser);
 
 router.post('/books', addBooks);
 router.put('/books/:id', updateBooks);
-router.delete('/books/:id', deletBook)
-router.get('/books/:id', readBook)
+router.delete('/books/:id', deletBook);
+router.get('/books/:id', readBook);
+
+router.post('/utilisateurs/:id_utilisateur/livres/:id_livre', attribuerLivreUtilisateur);
+
+
+
 
 router.use(errorHandler);
 
