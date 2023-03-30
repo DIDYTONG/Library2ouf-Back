@@ -10,6 +10,7 @@ const { updateBooks } = require('../controller/books/updateBooks');
 const {deletBook} = require("../controller/books/deleteBook");
 const {readBook} = require("../controller/books/readBook");
 const {attribuerLivreUtilisateur} = require('../controller/users/addBooks')
+const {addRead} = require("../controller/users/addRead");
 
 router.post('/utilisateurs', ajouterUtilisateur);
 router.get('/utilisateurs/:id', readUser);
@@ -22,7 +23,7 @@ router.delete('/books/:id', deletBook);
 router.get('/books/:id', readBook);
 
 router.post('/utilisateurs/:id_utilisateur/livres/:id_livre', attribuerLivreUtilisateur);
-
+router.put('/utilisateurs/:userId/livres/:bookId', addRead)
 
 
 

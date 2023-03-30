@@ -3,6 +3,7 @@ const booksShema = new mongoose.Schema({
   titre: String,
   tome: String,
   serieRef: String,
+  read: Boolean,
   utilisateur: [
     {
       type: mongoose.Schema.Types.ObjectId,
