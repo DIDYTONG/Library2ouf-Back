@@ -1,7 +1,7 @@
 const Utilisateur = require("../../model/Users");
 const mongoose = require("mongoose");
 
-const ajouterUtilisateur = async (req, res) => {
+const addUser = async (req, res) => {
   try {
     let utilisateur = new Utilisateur({
       nom: req.body.nom,
@@ -18,4 +18,4 @@ const ajouterUtilisateur = async (req, res) => {
   }
 };
 
-module.exports = { ajouterUtilisateur };
+module.exports = { addUser };
