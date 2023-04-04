@@ -15,7 +15,7 @@ const {addUser} = require("../controller/users/createUser");
 const {addLibrary} = require("../controller/library/createLibrary");
 const {addEndLibrary} = require("../controller/library/addEnd");
 const {addInProcess} = require("../controller/library/addInProcess");
-const {addReadLibrary} = require("../controller/library/addRead");
+const {addStatus} = require("../controller/library/addRead");
 
 router.post('/utilisateurs', addUser);
 router.get('/utilisateurs/:id', readUser);
@@ -30,10 +30,10 @@ router.get('/books/:id', readBook);
 router.post('/utilisateurs/:id_utilisateur/livres/:id_livre', attribuerLivreUtilisateur);
 router.put('/utilisateurs/:userId/livres/:bookId', addRead)
 
-router.post('/library/:id_utilisateur', addLibrary)
+router.post('/library/utilisateur/:id_utilisateur', addLibrary)
 router.post('/library/:id_library/livre/:id_livre/end', addEndLibrary);
 router.post('/library/:id_library/livre/:id_livre/inProcess', addInProcess);
-router.post('/library/:id_library/livre/:id_livre/read', addReadLibrary)
+router.post('/library/:id_library/livre/:id_livre/status/:status', addStatus)
 
 
 

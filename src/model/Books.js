@@ -5,7 +5,7 @@ const booksShema = new mongoose.Schema({
   titre: String,
   tome: String,
   serieRef: String,
-  read: String,
+  status: String,
   utilisateur: [
     {
       type: mongoose.Schema.Types.ObjectId,
