@@ -7,6 +7,9 @@ const addBooks = async (req, res) => {
         titre: req.body.titre,
         tome: req.body.tome,
         serieRef: req.body.serieRef,
+        description: req.body.description,
+        imgUrl: req.body.imgUrl,
+        status: req.body.status
     });
     let result = await book.save();
     console.log("Books add")

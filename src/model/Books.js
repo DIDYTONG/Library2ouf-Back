@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const Utilisateurs = require('../model/Users');
 
 const booksShema = new mongoose.Schema({
   titre: String,
   tome: String,
   serieRef: String,
   status: String,
+  description: String,
+  imgUrl: String,
   utilisateur: [
     {
       type: mongoose.Schema.Types.ObjectId,
